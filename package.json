@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A weather API that fetches data from Visual Crossing and implements Redis caching",
   "main": "api/index.ts",
-  "type": "module",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only api/index.ts",
     "test": "npx jest",
