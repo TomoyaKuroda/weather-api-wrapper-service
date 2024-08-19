@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import request from 'supertest';
 import axios from 'axios';
 import Redis from 'ioredis';
-import app from '../src/app'; // Adjust the import path as needed
+import app from '../api'; // Adjust the import path as needed
 
 dotenv.config();
 
