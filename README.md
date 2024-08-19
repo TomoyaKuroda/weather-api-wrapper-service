@@ -41,7 +41,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Start the server:
    ```
-   npm start
+   npm dev
    ```
 
 2. The API will be available at `http://localhost:3000` (or the port you specified in the .env file).
