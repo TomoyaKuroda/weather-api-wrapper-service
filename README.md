@@ -72,3 +72,5 @@ Contributions to this project are welcome. Please fork the repository and submit
 ## License
 
 This project is licensed under the MIT License.
+
+Inspired by https://roadmap.sh/projects/weather-api-wrapper-service
