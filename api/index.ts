@@ -2,10 +2,21 @@ import dotenv from 'dotenv';
 import express, { Request, Response } from 'express';
 import axios from 'axios';
 import Redis from 'ioredis';
+import { rateLimit } from 'express-rate-limit'
 
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+	// store: ... , // Redis, Memcached, etc. See below.
+})
+
+// Apply the rate limiting middleware to all requests.
 dotenv.config();
 
 const app = express();
+app.use(limiter)
 const port = process.env.PORT || 3000;
 
 const client = new Redis(process.env.REDIS_URL as string, {
