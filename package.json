@@ -2,13 +2,12 @@
   "name": "weather-api-wrapper-service",
   "version": "1.0.0",
   "description": "A weather API that fetches data from Visual Crossing and implements Redis caching",
-  "main": "dist/app.js",
+  "main": "api/index.ts",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node api/index.ts",
     "dev": "ts-node-dev --respawn --transpile-only api/index.ts",
-    "build": "tsc",
     "test": "npx jest",
-    "lint": "eslint . --ext .ts"
+    "lint": "npx eslint api/"
   },
   "keywords": [
     "weather",
